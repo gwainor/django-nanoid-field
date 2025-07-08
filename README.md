@@ -37,7 +37,7 @@ from django.db import models
 from nanoid_field import NanoidField
 
 class Profile(models.Model):
-    hash = NanoidField(max_length=10, alphabet='0123456789abcdefghijklmnopqrstuvwxyz)
+    hash = NanoidField(max_length=10, alphabet='0123456789abcdefghijklmnopqrstuvwxyz')
 ```
 
 
