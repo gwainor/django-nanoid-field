@@ -70,6 +70,34 @@ class SomeModel(models.Model):
     # ...
 ```
 
+A good practice is to create a base model. It also helps you to add generic
+methods to all of your models.
+
+Create a file named `base_model.py` one of the root `models` directory:
+
+```python
+from django.db import models
+
+
+class BaseModel(models.Model):
+    id = NanoidField()
+
+    class Meta:
+        abstract = True
+```
+
+Then you can exten from it in any model you'd like:
+
+```python
+from django.db import models
+from app.models.base_model import BaseModel
+
+
+class Product(BaseModel):
+    name = models.CharField()
+```
+
+
 ## Changing defaults
 `django-nanoid-field` also provides two settings to change defaults of `alphabet`
 and `max_length`. You can change those by adding them to your `settings.py` file
