@@ -20,17 +20,7 @@ pip install django-nanoid-field
 
 ## Usage
 
-First, add it to your applications (Not Required)
-
-```python
-INSTALLED_APPS = [
-    # ...
-    'nanoid_field',
-    # ...
-]
-```
-
-You can now use it in your models like:
+You can use it in your models like:
 
 ```python
 from django.db import models
